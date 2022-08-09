@@ -30,3 +30,7 @@ Route::get('/show', function () {
 Route::get('/send-email', function () {
     Mail::to('andaman@testmail.com')->send(new \App\Mail\TestMail());
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
